@@ -18,15 +18,20 @@ const Authentication = ({
   //     let str = str.substring(0, 1).toUpperCase() + str.subString(1, str.length);
   //   };
 
-  const handleChange = e => {
+  const handleChangeUsername = e => {
     // let nextState = {};
     // nextState["set" + initCap(e.target.name)] = e.target.value;
     // console.log(nextState);
-    if (e.target.name === "username") {
-      setUsername(e.target.value);
-    } else if (e.target.name === "password") {
-      setPassword(e.target.value);
-    }
+
+    setUsername(e.target.value);
+  };
+
+  const handleChangePassword = e => {
+    // let nextState = {};
+    // nextState["set" + initCap(e.target.name)] = e.target.value;
+    // console.log(nextState);
+
+    setPassword(e.target.value);
   };
 
   const handleLogin = () => {
@@ -47,7 +52,7 @@ const Authentication = ({
           name="username"
           type="text"
           className="validate"
-          onChange={handleChange}
+          onChange={handleChangeUsername}
           value={username}
         />
       </div>
@@ -57,7 +62,7 @@ const Authentication = ({
           name="password"
           type="password"
           className="validate"
-          onChange={handleChange}
+          onChange={handleChangePassword}
           value={password}
         />
       </div>

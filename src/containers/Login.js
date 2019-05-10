@@ -20,7 +20,7 @@ const Login = props => {
         document.cookie = "key=" + btoa(JSON.stringify(loginData));
 
         Materialize.toast("Welcome, " + id + "!", 2000);
-        this.props.history.push("/");
+        props.history.push("/");
         return true;
       } else {
         let $toastContent = $(

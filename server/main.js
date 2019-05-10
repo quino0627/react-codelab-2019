@@ -7,7 +7,7 @@ import bodyParser from "body-parser"; // PARSE HTML BODY
 
 const app = express();
 
-const port = 4000;
+const port = 8080;
 
 app.use(morgan("dev"));
 app.use(
@@ -38,9 +38,10 @@ app.use(function(err, req, res, next) {
   res.status(500).send("Something broke!");
 });
 
-app.listen(port, () => {
-  console.log("Express is listening on port", port);
-});
+// app.listen(port, () => {
+//   console.log("Express is listening on port", port);
+// });
+app.listen(process.env.PORT || 8080);
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./../public/index.html"));
